@@ -1,4 +1,4 @@
-import { Firestore } from 'firebase/firestore';
+import type { Firestore } from 'firebase/firestore';
 import { firebaseFirestore } from '../../../firebaseConfig';
 
 const firestore = firebaseFirestore as Firestore;
