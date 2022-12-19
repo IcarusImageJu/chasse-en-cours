@@ -1,8 +1,9 @@
-import type{ FC } from "react"
-import { Text } from "react-native"
+import React from 'react';
+import type { FC } from 'react';
+import { Text } from 'react-native';
 
-const Home:FC = () => {
-    return <Text>Home</Text>
-}
+const Home: FC = () => {
+  return <Text>Home</Text>;
+};
 
-export default Home
+export default Home;
