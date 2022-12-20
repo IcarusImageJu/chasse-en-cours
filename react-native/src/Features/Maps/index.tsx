@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { FC } from 'react';
 import { StyledMaps } from './styles';
-import type { Details, Region } from 'react-native-maps';
+import { useLocation } from '../../providers/location/useLocation';
+import { useRegion } from '../../providers/region/hooks';
+import Markers from './Markers';
 
 const Maps: FC = () => {
-  const handleonRegionChangeComplete = (region: Region, details: Details) => {
-    console.log(region, details);
-  };
+  const {} = useLocation();
+  const { handleRegionChange } = useRegion();
   return (
     <StyledMaps
       showsCompass
@@ -15,8 +16,12 @@ const Maps: FC = () => {
       showsMyLocationButton
       showsUserLocation
       userLocationPriority="balanced"
-      onRegionChangeComplete={handleonRegionChangeComplete}
-    />
+      onRegionChangeComplete={(region) => handleRegionChange(region)}
+    >
+      <Suspense>
+        <Markers />
+      </Suspense>
+    </StyledMaps>
   );
 };
 

@@ -17,7 +17,6 @@ import { getFirestore } from 'firebase/firestore';
 // import {...} from "firebase/functions";
 // import {...} from "firebase/storage";
 
-console.log(FIREBASE_API_KEY);
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: FIREBASE_API_KEY,
